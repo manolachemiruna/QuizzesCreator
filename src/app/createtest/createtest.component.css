@@ -1,0 +1,97 @@
+label{
+    color: aqua;
+    font-size: larger;
+}
+
+input
+{
+  
+    width: 40%;
+}
+input:hover
+{
+    color: black;
+    background-color: beige;
+  
+}
+
+.btn{
+
+    background-color:aquamarine;
+    text-align: center;
+
+}
+.btn:hover
+{
+    background-color: cadetblue;
+    animation: forwards;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input.ng-invalid.ng-touched
+{
+    border:1px solid red;
+}
+
+span
+{
+    color:lightskyblue;
+    font-size: larger;
+    font-style: initial;
+    text-align:center;
+    display: -ms-inline-flexbox;
+}
+
+table{
+    table-layout: fixed;
+    width:100 ;
+    border-collapse: collapse;
+}
+td{
+    width: 50%;
+    text-align: left;
+}
+h2{
+
+    color:aqua;
+    font-size: larger;
+    text-align:left;
+
+}
+
+h3{
+    color:aqua;
+    font-size: larger;
+    text-align:left;
+
+}
+
+p{
+    color:aqua;
+    font-size: larger;
+    text-align:justify;
+    shape-margin:80%;
+    width: 90%;
+    border: 3px solid gray;
+    padding: 10px;
+}
+p:hover
+{
+    color:black;
+}
+
+img
+{
+  transform-origin: 0 0;
+  transition: transform .25s, visibility .25s ease-in;
+  border:2px solid gray;
+}
+img:hover
+{
+    transform: scale(1.2);
+}
+
+body
+{
+    background-image: url("C:\Users\Miruna\Desktop\back.png");
+}

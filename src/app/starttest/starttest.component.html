@@ -1,0 +1,64 @@
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./assets/cover11.mp4" type="video/mp4">
+      </video>
+    <div class="content">
+    <div class="col-md-12 mb-2">
+        <label for="fullName">Full Name</label>
+        <input ngModel #fullname="ngModel" name="fullname" type="text" class="form-control" id="fullname" required>
+        <span class="help-block" *ngIf="!fullname.valid && fullname.touched"> Please enter your full name!</span>
+    </div>
+
+        <form #EditForm="ngForm">
+            <div *ngIf="tests?.length > 0;else noTests">
+
+            <form #QuestionForm="ngForm" *ngFor="let obj of tests[0].array;index as i;">
+             <table>
+
+                <tr>
+                <td class="choice">{{obj.name}}</td>
+                </tr>
+
+               <tr>
+                <th class="choice">Question {{i+1}}:</th>
+                <td class="choice">{{obj.question}}</td>
+               </tr>
+
+                <tr>
+                    <td class="choice">a)</td>
+                    <button id='{{ArrayValue[i]}}' (click)="[verifyAnswer(obj.choice1,obj,i),myFunction(ArrayValue[i]+1),myFunction(ArrayValue[i]+2),myFunction(ArrayValue[i]+3)]" class="btn btn-primary">{{obj.choice1}}</button>
+                </tr>
+
+                <tr>
+                    <td class="choice">b)</td>
+                    <button id='{{ArrayValue[i]+1}}' (click)="[verifyAnswer(obj.choice2,obj,i),myFunction(ArrayValue[i]),myFunction(ArrayValue[i]+2),myFunction(ArrayValue[i]+3)]" class="btn btn-primary">{{obj.choice2}}</button>
+                    
+                </tr>
+
+                <tr>
+                    <td class="choice">c)</td>
+                    <button id='{{ArrayValue[i]+2}}'(click)="[verifyAnswer(obj.choice3,obj,i),myFunction(ArrayValue[i]),myFunction(ArrayValue[i]+1),myFunction(ArrayValue[i]+3)]" class="btn btn-primary">{{obj.choice3}}</button>
+                    
+                </tr>
+
+                <tr>
+                    <td class="choice">d)</td>
+                    <button id='{{ArrayValue[i]+3}}' (click)="[verifyAnswer(obj.choice4,obj,i),myFunction(ArrayValue[i]),myFunction(ArrayValue[i]+2),myFunction(ArrayValue[i]+1)]" class="btn btn-primary">{{obj.choice4}}</button>
+                    
+                </tr>
+                <hr>
+               
+            </table>
+
+            </form>
+            </div>
+                <button (click)="[storeToDataBase(fullname.value),openSnackBar('Do you want to see your result?','Yes')]" name='Button' class="btn-secondary" type="submit" [disabled]="!EditForm.valid || !fullname.valid">Submit Test</button>
+
+                <ng-template #noTests>
+                    <hr>
+                    <h5>There are no tests</h5>
+                    </ng-template>
+        </form>
+        </div>
+</body>
+    

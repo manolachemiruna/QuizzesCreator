@@ -1,0 +1,99 @@
+
+<body>
+
+<h3 *ngIf="user">Logged in as:{{ user?.displayName }}</h3>
+<table>
+<tr>
+   
+    <td class="list">
+     <p>Here are your tests,try to edit them!</p>
+    <hr>
+    <div *ngIf="tests?.length > 0;else noTests">
+    <ul *ngFor="let test of tests" class="colection">
+     <li class="colection-item"><strong>{{test.name}}:</strong>{{test.code}}
+      <div>
+     <button (click)='editTest($event,test)' class="btn btn-primary">Edit Test</button>
+     <!--<button (click)='deleteTest($event,test)' class="btn btn-primary">Delete Test</button>-->
+      </div>
+     <div *ngIf="editState && testToEdit.code==test.code">
+        <form #EditForm="ngForm">
+            <div>
+                <form #QuestionForm="ngForm" *ngFor="let obj of test.array">
+    
+                <div class="form-row" >
+                  <div class="col-md-12 mb-2">
+                    <label for="Question">Question</label>
+                    <input ngModel #question="ngModel" set value="obj.question" name="obj.question" type="text" class="form-control" id="question" [(ngModel)]="obj.question" required>
+                    <span class="help-block" *ngIf="!question.valid && question.touched"> Please enter your question!</span>
+                  </div>
+        
+                    <div class="col-md-12 mb-2">
+                      <label for="choice1">choice1</label>
+                      <input ngModel #choice1="ngModel" set value="obj.choice3" name="obj.choice1" type="text" class="form-control" id="choice1" [(ngModel)]="obj.choice1" required>
+                      <span class="help-block" *ngIf="!choice1.valid && choice1.touched"> Please enter your choice!</span>
+                    </div>
+        
+                      <div class="col-md-12 mb-2">
+                      <label for="choice2">choice2</label>
+                      <input ngModel #choice2="ngModel" value="" name="obj.choice2" type="text" class="form-control" id="choice2" [(ngModel)]="obj.choice2" required>
+                      <span class="help-block" *ngIf="!choice2.valid && choice2.touched"> Please enter your choice!</span>
+                      </div>
+        
+                      <div class="col-md-12 mb-2">
+                        <label for="choice3">choice3</label>
+                        <input ngModel #choice3="ngModel" value="" name="obj.choice3" type="text" class="form-control" id="choice3" [(ngModel)]="obj.choice3" required>
+                        <span class="help-block" *ngIf="!choice3.valid && choice3.touched"> Please enter your choice!</span>
+                      </div>
+        
+                      <div class="col-md-12 mb-2">
+                        <label for="choice4">choice4</label>
+                        <input ngModel #choice4="ngModel" value="" name="obj.choice4" type="text" class="form-control" id="choice4" [(ngModel)]="obj.choice4" required>
+                        <span class="help-block" *ngIf="!choice4.valid && choice4.touched"> Please enter your choice!</span>
+                      </div>
+    
+                      <div class="col-md-12 mb-2">
+                        <label for="correct">correct</label>
+                        <input ngModel #correct="ngModel" value ="" name="obj.correct" type="text" class="form-control" id="correct" [(ngModel)]="obj.correct" required>
+                        <span class="help-block" *ngIf="!correct.valid && correct.touched"> Please enter your choice!</span>
+                      </div>
+    
+                    </div>
+                </form>
+            </div>
+                <button (click)="updateTest(test)" name='Button' class="btn btn-primary" type="submit" [disabled]="!EditForm.valid">Update Test</button>
+            </form>
+     </div>
+    </li>
+    </ul>
+    </div>
+    <ng-template #noTests>
+    <hr>
+    <h5>There are no tests</h5>
+    </ng-template>
+    <hr>
+
+</td>
+</tr>
+</table>
+<div class="description">
+<p class="description-col">This is your profile page.Here you can see your tests,edit them,delete them,create new ones,but also start a test.Enjoy this platform!</p>
+</div>
+
+<div class="content">
+<div>
+ <label>Try to create another test!</label>
+ <button routerLink="/createtest" class="btn btn-primary" type="submit">Create Test</button>
+</div>
+<div>
+<label>Start a test!</label>
+<label>Enter code</label>
+<input  ngModel #code="ngModel" name="code" type="text" required>
+<span class="help-block" *ngIf="!code.valid && code.touched">Your code is inccorect</span>
+<button matbutton (click)="[startTest(code.value),openSnackBarCode('Your code is incorrect!','Close')]" class="btn btn-primary" type="submit">StartTest</button>
+</div>
+</div>
+
+
+<button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>
+
+</body>

@@ -1,0 +1,9 @@
+1.create account(introdu nume,prenume mail,parola,confirma parola-->inf trimise la back-end sub forma de json care sunt salvate in baza de date)
+2.login(introduce mail si parola,request la backend daca exista in BD,--MESAJ eroare,respectiv intrare in pagina de login)
+3.forgot password?introdu mail-ul cu care ti-ai creat contul,primesti email pe adresa respectiva care contine link-ul pentru a reseta parola
+4.join test ->(prezent si cu logare si fara)
+   a.introd. cod (introduce codul unic pentru test)
+     b.start test(butonul pentru inceperea testului-----> se deschide o noua pagina in care apare setul de intrebari,dupa apasarea lui SUBMIT se genereaza un punctaj final)
+5.create test(intra in pagina de create,se introduce un nume pentru test, se pot adauga oricate intrebari apasand ADD QUESTION, la apasarea butonului SUBMIT se salveaza setul de intrebari in BD
+si se trimite un mail catre creatorul testului pe adresa cu care s-a logat,respectiv pe care l-a introdus la crearea testului)
+

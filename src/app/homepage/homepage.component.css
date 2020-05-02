@@ -1,0 +1,112 @@
+
+h1{
+    text-align:center;
+    color:violet;
+    font-size: xx-large;
+}
+h2
+{
+    color:indigo;
+    font-size: larger;
+    border-top: beige;
+    text-shadow: 2px 1px black;
+    font-style: italic;
+    text-align: center;
+
+}
+h3{
+    position:absolute;
+    top:18.5%;
+    left:50%;
+    color:indigo;
+    font-size: larger;
+    border-top: beige;
+    text-shadow: 2px 1px black;
+    font-style: italic;
+    
+}
+table{
+    table-layout: fixed;
+    width:100 ;
+    border-collapse: collapse;
+}
+td{
+    width: 50%;
+    text-align: left;
+}
+td:hover
+{
+    background-color:lavender;
+
+}
+p:hover
+{
+    background-color:lavenderblush;
+    color: black;
+    
+}
+p{
+    color:purple;
+    font-size: larger;
+    text-align:justify;
+    shape-margin:80%;
+    width: 90%;
+    border: 3px solid violet;
+    padding: 10px;
+}
+label
+{
+    text-align: center;
+    display: inline;
+    color: purple;
+    border-radius: inherit;
+    font-size: larger;
+    padding: 10px;
+    font-style: inherit;
+
+}
+div
+{
+    text-align: center;
+}
+img{
+    
+        width: 200px;
+        height: 200px;
+        position: relative;
+        animation-name: example;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+}
+
+@keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:200px;}
+    75%  { left:0px; top:200px;}
+    100% { left:0px; top:0px;}
+  }
+.btn
+{
+    display: inline-block;
+    color:black;
+    text-align: center;
+    background-color:plum;
+   
+}
+.btn:hover{
+
+    background-color: azure;
+    animation: forwards;
+    border-radius: 50%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body
+{
+    background-color: lightcyan;
+    background-image: url("C:\Users\Miruna\Desktop\background.png");
+}

@@ -1,0 +1,66 @@
+h3{
+    text-align:center;
+    color: aqua;
+    font-size: xx-large;
+}
+h2{
+    text-align: center;
+    color:purple;
+    text-shadow: 2px 1px black;
+    font-style: italic;
+}
+p{
+    color:lightseagreen;
+    font-style: italic;
+    font-size:larger;
+}
+div{
+
+    display: inline;
+}
+label{
+
+    color:palevioletred;
+    font-size: larger;
+}
+
+input
+{
+  
+    width: 40%;
+}
+input:hover
+{
+    color: black;
+    background-color:lavenderblush;
+  
+}
+
+.btn{
+
+    background-color:palevioletred;
+    text-align: center;
+
+}
+.btn:hover
+{
+    background-color:purple;
+    animation: forwards;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input.ng-invalid.ng-touched
+{
+    border:1px solid red;
+}
+
+span
+{
+    color:lightskyblue;
+    font-size: larger;
+    font-style: initial;
+    text-align:center;
+    display: -ms-inline-flexbox;
+}
+
+

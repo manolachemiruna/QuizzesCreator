@@ -1,0 +1,108 @@
+<html>
+  <head>
+  
+  </head>
+  <body>  
+<table>
+<th class="form">
+  <h3>
+    Here you can start your own test!
+  </h3>
+<div class="row mt-4">
+    <div class="col-12">
+      <div class="row" *ngIf="authError">
+        <div class="col-12 alert alert-danger">
+          {{ authError?.message }}
+        </div>
+      </div>
+  
+  
+      <form #TestForm="ngForm">
+        <div>
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              <label for="Name">Name of your test</label>
+              <input ngModel #name="ngModel" value="" name="name" type="text" class="form-control" id="name" required>
+              <span class="help-block" *ngIf="!name.valid && name.touched"> Please enter a name for your test!</span>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <label for="Email">Email</label>
+            <input ngModel #email="ngModel" value="" name="email" type="email" class="form-control" id="email" required>
+            <span class="help-block" *ngIf="!email.valid && email.touched"> Please enter your email address!</span>
+          </div>
+        </div>
+        <form #QuestionForm="ngForm">
+        <div class="form-row" *ngFor="let obj of arrayOfQuestion;let i=index" >
+          <div class="col-md-12 mb-2">
+            <label for="Question">Question {{i+1}}</label>
+            <input ngModel #question="ngModel" value="" name="question{{i}}" type="text" class="form-control" id="question" [(ngModel)]="obj.question" required>
+            <span class="help-block" *ngIf="!question.valid && question.touched"> Please enter your question!</span>
+          </div>
+
+            <div class="col-md-12 mb-2">
+              <label for="choice1">choice1</label>
+              <input ngModel #choice1="ngModel" value="" name="choice1{{i}}" type="text" class="form-control" id="choice1" [(ngModel)]="obj.choice1" required>
+              <span class="help-block" *ngIf="!choice1.valid && choice1.touched"> Please enter your choice!</span>
+            </div>
+
+              <div class="col-md-12 mb-2">
+              <label for="choice2">choice2</label>
+              <input ngModel #choice2="ngModel" value="" name="choice2{{i}}" type="text" class="form-control" id="choice2" [(ngModel)]="obj.choice2" required>
+              <span class="help-block" *ngIf="!choice2.valid && choice2.touched"> Please enter your choice!</span>
+              </div>
+
+              <div class="col-md-12 mb-2">
+                <label for="choice3">choice3</label>
+                <input ngModel #choice3="ngModel" value="" name="choice3{{i}}" type="text" class="form-control" id="choice3" [(ngModel)]="obj.choice3" required>
+                <span class="help-block" *ngIf="!choice3.valid && choice3.touched"> Please enter your choice!</span>
+              </div>
+
+              <div class="col-md-12 mb-2">
+                <label for="choice4">choice4</label>
+                <input ngModel #choice4="ngModel" value="" name="choice4{{i}}" type="text" class="form-control" id="choice4" [(ngModel)]="obj.choice4" required>
+                <span class="help-block" *ngIf="!choice4.valid && choice4.touched"> Please enter your choice!</span>
+              </div>
+              <div class="col-md-12 mb-2">
+                <label for="correct">correct</label>
+                <input ngModel #correct="ngModel" value ="" name="correct{{i}}" type="text" class="form-control" id="correct" [(ngModel)]="obj.correct" required>
+                <span class="help-block" *ngIf="!correct.valid && correct.touched"> Please enter your choice!</span>
+              </div>
+              <div class="col-md-12 mb-2">
+                <label for="points">points</label>
+                <input ngModel #points="ngModel" value ="" name="points{{i}}" type="number" class="form-control" id="points" [(ngModel)]="obj.points" required>
+                <span class="help-block" *ngIf="!points.valid && points.touched"> Please enter points for this question!</span>
+              </div>
+              <div class="row">
+              <div class="col-md-12">
+              <button (click)="addQuestion(points.value)" class="btn btn-primary">Add Question</button>
+              </div>
+              </div>
+            </div>
+        </form>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button (click)="[storeToDataBase(email.value,name.value),openSnackBar('Your test has been created!','Close')]" name='Button' class="btn btn-primary" type="submit" [disabled]="!TestForm.valid || !QuestionForm.valid">Create Test</button>
+          </div>
+        </div>
+        </div>
+        </form>
+    </div>
+    </div>
+  </th>
+  <th>
+    <h2>
+      Here are some indications about how you can create quizzes.
+    </h2>
+    <p>
+      You should write your email adress because after submitting the quiz you will get an unique code so that you can use the test.
+    </p>
+    
+    <img src="./assets/logo6.PNG" alt="Quiz">
+
+  </th>
+  </table>
+  </body>
+  </html>

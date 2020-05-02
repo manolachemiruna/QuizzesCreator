@@ -1,0 +1,54 @@
+
+.help-block
+{
+    border:1px solid red;
+    font-size: larger;
+    color: blue;
+}
+.show-block
+{
+    border:1px solid green;
+    font-size: larger;
+    color:black;
+}
+
+label
+{
+    color:white;
+    font-size:x-large;
+}
+.labels
+{
+    color:azure;
+}
+.content
+{
+    align-items: center;
+    position: absolute;
+    top:20%;
+    left:15%;
+}
+
+img
+{
+    position: fixed;
+}
+
+img
+{
+    position: fixed;
+}
+
+img.picture
+{
+    position: absolute;;
+    bottom: 0px;
+    left: 40%;
+
+}
+
+body
+{
+    background-color:azure;
+    background-image: url("C:\Users\Miruna\Desktop\coverz.jpg");
+}

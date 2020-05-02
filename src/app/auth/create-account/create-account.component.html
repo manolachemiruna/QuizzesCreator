@@ -1,0 +1,62 @@
+<h2>Whould you like to create an account?</h2>
+<div class="row mt-4">
+  <div class="col-12">
+    <div class="row" *ngIf="authError">
+      <div class="col-12 alert alert-danger">
+        {{ authError?.message }}
+      </div>
+    </div>
+
+
+    <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+      <div>
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <label for="firstName">First name</label>
+          <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" required>
+          <span class="help-block" *ngIf="!firstname.valid && firstname.touched"> Please enter your first name!</span>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-12 mb-2">
+          <label for="lastName">Last name</label>
+          <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" required>
+          <span class="help-block" *ngIf="!lastname.valid && lastname.touched"> Please enter your last name!</span>
+        </div>
+        </div>
+    
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <label for="email">Email</label>
+          <input ngModel #email="ngModel" name="email" type="email" class="form-control" required pattern="(.*@yahoo.com$)|(.*@gmail.com$)">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Your adress mail should end with @yahoo.com or @gmail.com!</span>
+
+        </div>
+      </div>
+  
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <label for="password">Password</label>
+            <input ngModel #password="ngModel" name="password" type="password" class="form-control" required minlength="6">
+            <span class="help-block" *ngIf="password.touched && !password.valid"> Password should be at least 6 characters long!</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <label>Confirm Password</label>
+            <input ngModel #Cpassword="ngModel" name="Cpassword" type="password" class="form-control" required>
+            <span class="help-block" *ngIf=" password.value!=Cpassword.value && password.touched && Cpassword.touched"> Password and Confirm Password do not match!</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button mat-button (click)="openSnackBar('Your account has been created','Close')" name='Button' class="btn btn-primary" type="submit" [disabled]="!userRegForm.valid || password.value!=Cpassword.value">Create Account</button>
+          </div>
+        </div>
+ 
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+h3{
+
+    text-align: left;
+    font-size: larger;
+    border:3px salmon;
+    color: lightcoral;
+    
+}
+h3:hover
+{
+    font-size: x-large;
+}
+table{
+    table-layout: fixed;
+    width:100 ;
+    border-collapse: collapse;
+}
+table:hover
+{
+    background-color:beige;
+}
+
+th{
+    width: 50%;
+    text-align: left;
+}
+
+p{
+    color:lightcoral;
+    font-size: larger;
+    shape-margin:80%;
+    text-align:center;   
+}
+.description-col
+{
+    border: 3px solid gray;
+    padding: 10px;
+}
+
+p:hover{
+
+    color: black;
+    font-size: x-large;
+    line-height: 1.6;
+}
+
+.btn
+{
+    display: inline-block;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    background-color: indigo;
+    border: 2px solid black;
+   
+}
+
+.btn:hover{
+
+    background-color:lightcoral;
+    border: 2px solid grey;
+    animation: forwards;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+img{
+    
+    width: 250px;
+    height: 150px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes example {
+    from {top: 0px; background-color: yellow;}
+    to {top: 200px;}
+  }
+
+body
+{
+    background-image: url("C:\Users\Miruna\Desktop\anotherback2.png");
+}
+
+label
+{
+  color:salmon;
+  border-color: 2px black;
+}
+
+table{
+    table-layout: fixed;
+    width:100 ;
+    border-collapse: collapse;
+}
+
+.content
+{
+    position: absolute;
+    left:40%;
+    top:90%;
+}
+.description
+{
+    position: absolute;
+    left:20%;
+    top:80%;
+
+}
+span
+{
+    color:indigo;
+}

@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>
+    Welcome to Test Creator Platform!
+  </h1>
+  <hr>
+<table style="width:100%, table-layout=fixed">
+<tr>
+    <th>
+
+    </th>
+    <th>
+
+    <h3>Find some more about this platform!</h3>
+    </th>
+</tr>
+
+<tr>
+ <td>
+ <app-create-account></app-create-account>
+<app-login></app-login>
+ </td>
+
+<td>
+  <p>
+ Welcome to our platform which provides the posibity to create personalized quizzes.
+ How can you do it?Well,there are 2 posibilities:First one is to create an account so that you will have a list of all the quizzes you have created on your profile and you can edit then any time.The second option is to create a test using the button "CreateTest" from the buttom of the page,this alternative provides you the posibility to creat a quiz which is available for a period of 7 days,after that the quiz is deleted and you can no loger use it.For more informations about quizzes press "CreateTest".
+  </p>
+   <img src="./assets/logo3.PNG" alt="Quiz">
+ </td>
+ 
+</tr>
+</table>
+
+
+<h2>Welcome to Test Section!</h2>
+<hr>
+<div>
+<label>Try to create your own test!</label>
+<button routerLink="/createtest" class="btn btn-primary" type="submit">CreateTest</button>
+</div>
+<h1> 
+
+</h1>
+<div>
+<label>Start your test!</label>
+<label>Enter code</label>
+<input  ngModel #code="ngModel" name="code" type="text" required>
+<span class="help-block" *ngIf="!code.valid && code.touched">Your code is inccorect</span>
+<button mat-button (click)="[verifyCode(code.value),openSnackBar('Your code is incorrect!','Close')]" class="btn btn-primary" type="submit">StartTest</button>
+</div>
+
+<router-outlet></router-outlet>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<body>
+  <img src="./assets/bord2.PNG" alt="Quiz">
+<div class="content">
+<form #EditForm="ngForm">
+<div *ngIf="tests?.length > 0;else noTests">
+<form #QuestionForm="ngForm">
+
+    <div class="form-row" *ngFor="let obj of tests[0].array;index as i;" >
+      <div class="col-md-12 mb-2">
+        <label class="labels" for="Question">Question {{i+1}}:{{obj.question}}</label>
+      </div>
+
+        <div class="col-md-12 mb-2">
+          <label for="choice1">a){{obj.choice1}}</label>
+          <span class="help-block" *ngIf="findValue(obj.choice1,obj) && findKey(obj.question) && getIndex(obj.choice1,obj.question)">Your answer is wrong</span>
+          <span class="show-block" *ngIf="obj.choice1==obj.correct">This answer is correct</span>
+        </div>
+
+          <div class="col-md-12 mb-2">
+          <label for="choice2">b){{obj.choice2}}</label>
+          <span class="help-block" *ngIf="findValue(obj.choice2,obj) && findKey(obj.question) && getIndex(obj.choice2,obj.question)">Your answer is wrong</span>
+          <span class="show-block" *ngIf="obj.choice2==obj.correct">This answer is correct</span>
+          </div>
+
+          <div class="col-md-12 mb-2">
+            <label for="choice3">c){{obj.choice3}}</label>
+            <span class="help-block" *ngIf="findValue(obj.choice3,obj) && findKey(obj.question) && getIndex(obj.choice3,obj.question)">Your answer is wrong</span>
+            <span class="show-block" *ngIf="obj.choice3==obj.correct">This answer is correct</span>
+          </div>
+
+          <div class="col-md-12 mb-2">
+            <label for="choice4">d){{obj.choice4}}</label>
+            <span class="help-block" *ngIf="findValue(obj.choice4,obj) && findKey(obj.question) && getIndex(obj.choice4,obj.question)">Your answer is wrong</span>
+            <span class="show-block" *ngIf="obj.choice4==obj.correct">This answer is correct</span>
+          </div>
+        </div>
+    </form>
+    </div>
+    <ng-template #noTests>
+        <hr>
+        <h5>There are no tests</h5>
+        </ng-template>
+
+    </form>
+  </div>
+  <img class="picture" src="./assets/bord4.PNG" alt="Quiz">
+  </body>
